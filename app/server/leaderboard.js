@@ -13,6 +13,11 @@
                 Players.insert({name: names[i], score: Math.floor(Random.fraction() * 10) * 5});
             }
         }
+        if(Clubs.find().count() === 0){
+            Clubs.insert({
+                name : "MyClub"
+            });
+        }
     });
 
 })();

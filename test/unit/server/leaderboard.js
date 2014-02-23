@@ -24,6 +24,19 @@
             expect(Players.insert.calls.length).toEqual(0);
         });
 
+        it("inserts my club into the Clubs collection if it's empty", function () {
+
+
+            spyOn(Clubs, 'find').andReturn({ count: function () {
+                return 0;
+            } });
+            spyOn(Clubs, 'insert');
+            Meteor.runStartupMethods();
+            expect(Clubs.find.calls.length).toEqual(1);
+            expect(Clubs.insert.calls.length).toEqual(1);
+        });
+
+
     });
 
 })();

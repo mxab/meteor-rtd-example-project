@@ -10,4 +10,13 @@
 
     });
 
+    describe("Club model", function () {
+
+        it("is only added once to the Meteor.Collection", function () {
+            expect(Meteor.instantiationCounts.clubs).toBe(1);
+        });
+
+    });
+
+
 })();
